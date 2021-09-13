@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hass-service
+spec:
+  type: ExternalName
+  ports:
+    - name: http
+      port: 443
+      targetPort: 443
+  externalName: 192.168.1.186
