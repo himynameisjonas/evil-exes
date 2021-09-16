@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hass-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`${SECRET_HASS_DOMAIN}`)
+      kind: Rule
+      priority: 1
+      services:
+        - name: hass-service
+          port: 8123
+  tls:
+    secretName: certsecret
