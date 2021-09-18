@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: hass-service
+  name: zigberry-service
   namespace: networking
 spec:
   type: ExternalName
   ports:
-    - name: https
-      port: 8123
-  externalName: 192.168.1.186
+    - name: http
+      port: 8080
+  externalName: 192.168.1.78

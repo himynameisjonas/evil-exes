@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - helm-release.yaml
   - tls-store
+  - middlewares
   - dashboard
   - hass
-  - middlewares
+  - zigberry
