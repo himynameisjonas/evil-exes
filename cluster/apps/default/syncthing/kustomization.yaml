@@ -5,5 +5,5 @@ resources:
   - syncthing-discovery.yaml
   - syncthing-listen.yaml
   - service.yaml
-  - helm-release.yaml
+  - deployment.yaml
   - ingress.yaml
