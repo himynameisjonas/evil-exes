@@ -10,4 +10,4 @@ spec:
   volumeName: external-hdd
   resources:
     requests:
-      storage: 128Mi
+      storage: 50Gi
