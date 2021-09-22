@@ -1,9 +1,9 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: syncthing-data
+  name: syncthing-volume
   annotations:
-    nfs.io/storage-path: "syncthing-data" # not required, depending on whether this annotation was shown in the storage class description
+    nfs.io/storage-path: "syncthing-volume" # not required, depending on whether this annotation was shown in the storage class description
 spec:
   storageClassName: nfs-client
   accessModes:
