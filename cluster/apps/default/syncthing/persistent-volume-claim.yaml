@@ -1,13 +1,12 @@
-kind: PersistentVolumeClaim
+---
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
-  name: syncthing-volume
-  annotations:
-    nfs.io/storage-path: "syncthing-volume" # not required, depending on whether this annotation was shown in the storage class description
+  name: syncthing-local
 spec:
-  storageClassName: nfs-client
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
+  storageClassName: local-path
   resources:
     requests:
-      storage: 1Mi
+      storage: 128Mi
