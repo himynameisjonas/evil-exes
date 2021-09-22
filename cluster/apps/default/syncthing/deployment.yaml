@@ -69,4 +69,4 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: syncthing-local
+            claimName: syncthing-local-hdd
