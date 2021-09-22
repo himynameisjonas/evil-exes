@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: syncthing-external-hdd
+  name: syncthing-external
 spec:
   accessModes:
     - ReadWriteOnce
