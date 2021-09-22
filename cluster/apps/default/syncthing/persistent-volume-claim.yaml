@@ -7,7 +7,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   storageClassName: local-path
-  volumeName: local-pv
+  volumeName: external-hdd
   resources:
     requests:
       storage: 128Mi
