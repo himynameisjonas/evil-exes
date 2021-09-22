@@ -5,7 +5,7 @@ metadata:
   annotations:
     nfs.io/storage-path: "syncthing-data" # not required, depending on whether this annotation was shown in the storage class description
 spec:
-  storageClassName: managed-nfs-storage
+  storageClassName: nfs-client
   accessModes:
     - ReadWriteMany
   resources:
