@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: syncthing
+  labels:
+    helm.sh/chart: syncthing-3.0.1
+    app.kubernetes.io/name: syncthing
+    app.kubernetes.io/instance: syncthing
+    app.kubernetes.io/version: "1.17.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    hajimari.io/enable: "true"
+    hajimari.io/icon: weather-sunset
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.middlewares: networking-basic-auth@kubernetescrd
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - "syncthing.${SECRET_DOMAIN}"
+      secretName: "syncthing"
+  rules:
+    - host: "syncthing.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: syncthing
+                port:
+                  number: 8384
