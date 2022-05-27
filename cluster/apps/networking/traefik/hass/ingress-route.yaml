@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`${SECRET_HASS_DOMAIN}`)
+    - match: Host(`hass.${SECRET_DOMAIN}`)
       kind: Rule
       priority: 1
       services:
